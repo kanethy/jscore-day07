@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=["kanethy","lulu","karlie","taylor"];
+        arr.forEach(v =>alert(`${v}-----dao`));
+
+        var arr1=[1,2,3,4,5];
+        var arr2=arr1.map(function (value,i,arr1) {
+            console.log(`arr1.map()调用一次回调函数，将原数组[${arr1}]的下标位置${i}的值${value}传入经过回调函数，返回新的元素值${value*3}对应的下标位置${i}`);
+            return value*3;
+            
+        })
+        console.log(arr2);
+
+        var arr3=arr1.filter(function (value,i,arr1) {
+            console.log(`arr1.filter()调用了一次回调函数，将原数组[${arr1}]中的${i}位置的元素值${value}，传入回调函数中，返回新的数组${value%2==0}`);
+            return value%2==0;
+            
+        })
+        console.log(arr3);
+
+        var result=arr1.reduce(function (box,value,i,arr1) {
+            console.log(`arr1.reduce()调用了一次回调函数，起始值是${box},将原数组[${arr1}]中的${i}位置的元素值${value}，传入回调函数中，返回新的值${box+value}`);
+            return box+value;
+            
+        },10);
+        console.log(result);
+    </script>
+</body>
+</html>
